@@ -1,6 +1,9 @@
-# TikTok Live Stream Notifier
+# TikTok Live Stream Overlay
 
 This project is a Flask application that connects to TikTok Live and notifies users of various events such as follows, comments, likes, and when the live stream ends. It uses Flask-SocketIO for real-time communication.
+
+It will currently display the following follower alert, chat messages, likes, stream ending (useless)
+
 
 ## Features
 
