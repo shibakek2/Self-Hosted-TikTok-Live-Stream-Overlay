@@ -23,8 +23,7 @@ It will currently display the following follower alert, chat messages, likes, st
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone <https://github.com/shibakek2/tiktok-overlay>
    ```
 
 2. Install the required packages:
