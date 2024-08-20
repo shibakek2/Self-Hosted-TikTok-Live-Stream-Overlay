@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerts</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+    <script>
+        // Connect to the SocketIO server
+        const socket = io();
+
+        // Function to create and display message
+        function displayMessage(message) {
+            const messageDiv = document.createElement('div');
+            messageDiv.style.position = 'fixed';
+            messageDiv.style.top = '50%';
+            messageDiv.style.left = '50%';
+            messageDiv.style.transform = 'translate(-50%, -50%)'; 
+            messageDiv.style.background = 'rgba(255, 255, 255, 0.7)';
+            messageDiv.style.padding = '10px';
+            messageDiv.style.borderRadius = '5px';
+            messageDiv.innerText = message;
+            document.body.appendChild(messageDiv);
+            setTimeout(() => {
+                document.body.removeChild(messageDiv);
+            }, 3000);
+        }
+
+        // Listen for 'follow_event' messages
+        socket.on('follow_event', function(data) {
+            displayMessage(data.message);
+        });
+
+        // Listen for 'comment_event' messages
+        socket.on('comment_event', function(data) {
+            displayMessage(data.message);
+        });
+
+        // Listen for 'like_event' messages
+        socket.on('like_event', function(data) {
+            displayMessage(data.message);
+        });
+    </script>
+    <style>
+        body {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+</body>
+</html>
